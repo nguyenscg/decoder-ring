@@ -1,11 +1,47 @@
 // For the substitution cipher (example: substitution("message", "plmoknijbuhvygctfxrdzeswaq") => "ykrrpik"), the tests that you write should test that the following is true:
+const expect = require("chai").expect;
+const substitution = require("../src/substitution");
 
-// It returns false if the given alphabet isn't exactly 26 characters long.
+describe("substitution", () => {
+    describe("error handling", () => {
+        it("returns false if the given alphabet isn't exactly 26 characters long", () => {
+            const message = "message";
+            const alphabet = "short";
+            const actual = substitution(message, alphabet);
+            expect(actual).to.be.false;
+        });
+        it("it returns false if there are any duplicate characters in the given alphabet", () => {
+            const message = "message";
+            const alphabet = "plmoknijbuhvygctfxrdzewwqq";
+            const actual = substitution(message, alphabet);
+            
+            expect(actual).to.be.false;
+        });
+    });
+    describe("encoding message", () => {
+        it("maintains spaces in the message, before and after enoding or decoding", () => {
+            const message = "a message";
+            const alphabet = "plmoknijbuhvygctfxrdzeswaq";
+            const actual = substitution(message, alphabet);
+            const expected = "p ykrrpik";
 
-// It correctly translates the given phrase, based on the alphabet given to the function.
+            expect(actual).to.equal(expected);
+        });
+        it("ignores capital letters", () => {
+            const message = "Message";
+            const alphabet = "plmoknijbuhvygctfxrdzeswaq";
+            const actual = substitution(message, alphabet);
+            const expected = "ykrrpik";
 
-// It returns false if there are any duplicate characters in the given alphabet.
+            expect(actual).to.equal(expected);
+        });
+        it("it correctly translate the given phrase, based on the alphabet given to the function", () => {
+            const message = "message";
+            const alphabet = "plmoknijbuhvygctfxrdzeswaq";
+            const actual = substitution(message, alphabet);
+            const expected = "ykrrpik";
 
-// It maintains spaces in the message, before and after encoding or decoding.
-
-// It ignores capital letters. (For example, the results of A Message and a message should be the same.)// Write your tests here!
+            expect(actual).to.equal(expected);
+        });
+    });
+})
