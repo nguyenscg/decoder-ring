@@ -6,3 +6,9 @@
 ## Installation
 - npm install to install dependencies
 
+## Technologies
+- JavaScript
+- Node.js
+- Mocha
+- Chai
+
