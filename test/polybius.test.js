@@ -1,6 +1,6 @@
 // For the Polybius square (example: polybius("message") => "23513434112251"), the tests that you write should test that the following is true:
 const expect = require("chai").expect;
-const polybius = require("../src/polybius");
+const {polybius} = require("../src/polybius");
 
 describe("polybius", () => {
     describe("encoding a message", () => {

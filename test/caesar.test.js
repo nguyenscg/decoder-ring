@@ -1,6 +1,6 @@
 // For the Caesar shift (example: caesar("Zebra Magazine", 3) => "cheud pdjdclqh"), the tests that you write should test that the following is true:
 const expect = require("chai").expect;
-const caesar = require("../src/caesar");
+const {caesar} = require("../src/caesar");
 
 describe("caesar", () => {
     describe("error handling", () => {

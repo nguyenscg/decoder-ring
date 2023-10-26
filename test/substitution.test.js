@@ -1,6 +1,6 @@
 // For the substitution cipher (example: substitution("message", "plmoknijbuhvygctfxrdzeswaq") => "ykrrpik"), the tests that you write should test that the following is true:
 const expect = require("chai").expect;
-const substitution = require("../src/substitution");
+const {substitution} = require("../src/substitution");
 
 describe("substitution", () => {
     describe("error handling", () => {
