@@ -62,7 +62,7 @@ describe("caesar", () => {
             const message = "zebra message";
             const shift = -3;
             const actual = caesar(message, shift);
-            const expected = "wbyox jxdxwfkb";
+            const expected = "wbyox jbppxdb";
 
             expect(actual).to.equal(expected);
         });
