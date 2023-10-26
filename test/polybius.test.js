@@ -21,7 +21,7 @@ describe("polybius", () => {
         it("it maintains space in the message, before and after encoding or decoding.", () => {
             const message = "A message";
             const actual = polybius(message);
-            const expected = "1123513434112251";
+            const expected = "11 23513434112251";
 
             expect(actual).to.equal(expected);
         });
